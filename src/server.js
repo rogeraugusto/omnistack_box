@@ -37,7 +37,8 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 
 app.use(require("./routes"));
 
-server.listen(3000);
+// Configuração de url para acesso pelo heroku
+server.listen(process.env.PORT || 3000);
 
 // Mongo Atlas
 // mongotest@emailna.co
