@@ -22,7 +22,7 @@ const File = new mongoose.Schema(
 // Criar campo virtual que existe apenas no lado do código e não na tabela do banco
 
 File.virtual("url").get(function() {
-  // Configuração de url para acesso pelo heroku
+  // Configuração de url para variáveis de ambiente
   const url = process.env.URL || "http://localhost:3000";
 
   return `${url}http://localhost:3000/files/${encodeURIComponent(this.path)}`;

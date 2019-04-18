@@ -37,7 +37,7 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 
 app.use(require("./routes"));
 
-// Configuração de url para acesso pelo heroku
+// Configuração de url para variáveis de ambiente
 server.listen(process.env.PORT || 3000);
 
 // Mongo Atlas
