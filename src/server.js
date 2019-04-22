@@ -7,7 +7,13 @@ const app = express();
 
 // Define para o frontend acessar o backend estando em um domínio diferente
 // Permite melhorar a config e limitar algumas coisas
-//app.use(cors);
+const corsOptions = {
+  origin: '*',
+  method: ['GET', 'POST'],
+  //allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
+  optionsSuccessStatus: 200 //Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
