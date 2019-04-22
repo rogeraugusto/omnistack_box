@@ -7,7 +7,7 @@ const app = express();
 
 // Define para o frontend acessar o backend estando em um domínio diferente
 // Permite melhorar a config e limitar algumas coisas
-//app.use(cors);
+app.use(cors);
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
